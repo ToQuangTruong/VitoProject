@@ -25,11 +25,11 @@ public class DriverCoach {
     @Column
     private String type;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "coach_id", referencedColumnName = "coach_id")
     private Coach coach;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "driver_id", referencedColumnName = "driver_id")
     private Driver driver;
 }

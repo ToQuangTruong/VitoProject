@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -37,6 +38,6 @@ public class Driver {
     @Column
     private Integer workTime;
 
-    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
-    private DriverCoach driverCoach;
+    @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
+    private List<DriverCoach> driverCoach;
 }

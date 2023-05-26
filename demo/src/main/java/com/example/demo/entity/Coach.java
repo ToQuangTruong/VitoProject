@@ -41,6 +41,6 @@ public class Coach {
     @OneToMany(mappedBy = "coach", cascade = CascadeType.ALL)
     private List<Trip> trips;
 
-    @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL)
-    private DriverCoach driverCoach;
+    @OneToMany(mappedBy = "coach", cascade = CascadeType.ALL)
+    private List<DriverCoach> driverCoach;
 }
