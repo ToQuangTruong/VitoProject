@@ -3,6 +3,7 @@ package com.example.demo.repository;
 import com.example.demo.entity.DriverCoach;
 import com.example.demo.entity.DriverCoachPKId;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,5 +14,7 @@ public interface DriverCoachRepository extends JpaRepository<DriverCoach, Driver
     List<DriverCoach> findDriverCoachByDriverId(Long driverId);
 
     DriverCoach findDriverCoachByCoachIdAndDriverId(Long coachId, Long driverId);
-    DriverCoach deleteDriverCoachByCoachIdAndDriverId(Long coachId, Long driverId);
+
+    @Modifying
+    void deleteDriverCoachByCoachIdAndDriverId(Long coachId, Long driverId);
 }
